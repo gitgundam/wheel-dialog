@@ -20,6 +20,13 @@
   width: 100%;
   height: 100%;
   text-decoration-line: none;
+  opacity: 0;
+  z-index: 0;
+  transition: all 0.3s;
+}
+.carousel .panels>a.active{
+  opacity: 1;
+  z-index: 90;
 }
 
 .carousel .panels>a:nth-child(even) {
@@ -30,8 +37,10 @@
   background: lightpink;
 }
 
+
 .carousel .arrow {
   position: absolute;
+  z-index: 100;
   top: 50%;
   width: 30px;
   height: 30px;
@@ -83,6 +92,7 @@
 
 .carousel .indicators {
   position: absolute;
+  z-index: 100;
   display: flex;
   left: 50%;
   bottom: 5%;
@@ -97,7 +107,7 @@
 }
 
 .carousel .indicators>li {
-  margin: 5px 0;
+  padding: 5px 0;/*设置margin没用,要padding才按了onclick有用*/
   width: 20%;
   cursor: pointer;
 }
